@@ -1,0 +1,9 @@
+
+:root {
+    --background-primary: #ffffff;
+}
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}

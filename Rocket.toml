@@ -1,0 +1,9 @@
+[development]
+address = "localhost"
+template_dir = "src/view/templates"
+
+[staging]
+template_dir = "src/view/templates"
+
+[production]
+template_dir = "src/view/templates"

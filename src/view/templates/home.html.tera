@@ -1,0 +1,20 @@
+{% extends "base" %}
+
+{% block content %}
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Link</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for link in data %}
+        <tr>
+            <td>{{ link[0] }}</td>
+            <td>{{ link[1] }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
