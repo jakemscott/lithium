@@ -1,0 +1,29 @@
+[package]
+name = "URLShortener"
+version = "0.1.0"
+authors = ["jakescott <jake.michael.scott@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = { version = "0.4", features = ["serde"]}
+rocket = { verison= "0.4.3", features= ["tls"] }
+tera = "0.11"
+
+diesel = {version = "1.4.2", features = ["chrono"]}
+dotenv = "0.9.0"
+argon2rs = "0.2.5"
+rand = "0.7.3"
+htmlescape = "0.3.1"
+unic-ucd = "0.9.0"
+
+serde = "1.0.90"
+serde_derive = "1.0.90"
+serde_json = "1.0.39"
+
+[dependencies.rocket_contrib]
+version = "0.4.3"
+default-features = false
+features = ["tera_templates", "serve", "diesel_mysql_pool", "json"]
+

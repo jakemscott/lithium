@@ -10,5 +10,6 @@ pub struct Users {
     pub id: i32,
     pub username: String,
     pub salt: String,
-    pub password: String
+    pub password: String,
+    pub admin: bool
 }

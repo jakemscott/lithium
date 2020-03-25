@@ -1,9 +1,78 @@
 
 :root {
     --background-primary: #ffffff;
+    --action-primary: #303030;
+    --text-primary: #303030;
 }
 body {
     height: 100vh;
     margin: 0;
     font-family: Roboto, sans-serif;
+}
+.login-background {
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+.alert {
+    margin: 20px;
+    top: 0;
+    position: absolute;
+    width: calc(100% - 40px);
+}
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px 60px;
+    width: 50%;
+    min-width: 400px;
+    max-width: 600px;
+    background-color: white;
+    -webkit-box-shadow: 0px 5px 25px 10px rgba(0,0,0,0.18);
+    -moz-box-shadow: 0px 5px 25px 10px rgba(0,0,0,0.18);
+    box-shadow: 0px 5px 25px 10px rgba(0,0,0,0.18);
+}
+.login h1 {
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--text-primary);
+}
+.login .input-group-prepend {
+    padding: 10px 15px !important;
+    color: #969696;
+}
+.login .input-group-prepend, .login input {
+    background: rgb(249, 249, 249);
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 13px;
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+    -webkit-transition: box-shadow .5s ease;
+    -moz-transition: box-shadow .5s ease;
+    -o-transition: box-shadow .5s ease;
+    -ms-transition: box-shadow .5s ease;
+    transition: box-shadow .5s ease;
+}
+.login input {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+.login input:focus {
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+}
+.login button[type="submit"] {
+    border-radius: 0;
+    background-color: var(--action-primary);
+    border-color: var(--action-primary);
+    width: 200px;
+    margin: auto;
+    display: table;
 }

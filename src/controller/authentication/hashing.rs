@@ -31,14 +31,14 @@ impl Password {
         let rs_hash = Encoded::new(Password::a2(), self.random_salt.as_bytes(), self.local_salt.as_bytes(), b"", b"").to_u8();
         String::from_utf8(rs_hash).unwrap()
     }
-    pub(crate) fn hash(&self, input: &str) -> String {
+    pub fn hash_fn(&self, input: &str) -> String {
         // be sure to store this impl random salt and returned hash
         let hashed = Encoded::new(Password::a2(), input.as_bytes(), self.hashed_salt().as_bytes(), b"", b"").to_u8();
         String::from_utf8(hashed).unwrap()
     }
-    pub(crate) fn verify(&self, input: &str, hash: &str) -> bool {
+    pub fn verify(&self, input: &str, hash: &str) -> bool {
         let mut resp = false;
-        let hashed_input: String = self.hash(input);
+        let hashed_input: String = self.hash_fn(input);
 
         if hashed_input.as_str() == hash { resp = true; }
         resp

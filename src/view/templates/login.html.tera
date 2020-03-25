@@ -1,0 +1,32 @@
+{% extends "base" %}
+
+{% block content %}
+<!--insert login form-->
+<div class="login-background"></div>
+{% if alert %}
+<div class="alert alert-danger" role="alert">
+    {{ alert }}
+</div>
+{% endif %}
+<section class="login">
+    <form method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span>
+                    <i class="fas fa-user"></i>
+                </span>
+            </div>
+            <input type="text" class="form-control" aria-label="Username" name="username" placeholder="Username" required="required" />
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span>
+                    <i class="fas fa-key"></i>
+                </span>
+            </div>
+            <input type="password" class="form-control" aria-label="Password" name="password" placeholder="Password" required="required" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Enter</button>
+    </form>
+</section>
+{% endblock content %}
