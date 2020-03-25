@@ -9,6 +9,11 @@ body {
     margin: 0;
     font-family: Roboto, sans-serif;
 }
+table.table {
+    width: calc(100% - 100px);
+    margin: 50px;
+    border: 1px solid #dee2e6;
+}
 .login-background {
     top: 0;
     position: absolute;
