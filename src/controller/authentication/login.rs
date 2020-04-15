@@ -1,15 +1,15 @@
 #[path = "authorization.rs"] mod auth;
-#[path = "hashing.rs"] mod hashing;
 #[path = "../../model/administrator.rs"] mod admin;
 
-use crate::login::auth::*;
-use crate::login::admin::*;
+use admin::*;
+use auth::*;
+
+use crate::DbConnection;
 
 use rocket_contrib::templates::Template;
 use rocket::request::{ FlashMessage, Form };
 use rocket::response::{ Redirect, Flash };
 use rocket::http::{ Cookies };
-use crate::DbConnection;
 
 
 //use a request guard to ensure that a user is logged in. If cookie present redirect to admin page
@@ -49,7 +49,6 @@ fn retry_login_user(user: UserQuery, flash_msg_opt: Option<FlashMessage>) -> Tem
 /// display why the login failed and display the login screen
 #[get("/login", rank = 3)]
 fn retry_login_flash(flash_msg: FlashMessage) -> Template {
-    println!("Retrying login...");
     let mut context = tera::Context::new();
 
     context.insert("title", "Login");
@@ -66,17 +65,9 @@ fn process_login(form: Form<LoginCont<AdministratorForm>>, mut cookies: Cookies,
     login.flash_redirect("/admin", "/login", &mut cookies, conn)
 }
 
-#[get("/admin")]
-pub fn admin(_user: AuthCont<AdministratorCookie>) -> Template {
-    let mut context = tera::Context::new();
-    context.insert("title", "jms.sc");
-    Template::render("admin", &context)
-}
-
 // make all login routes available
 pub fn login_routes() -> Vec<rocket::Route> {
     routes![
-        admin,
         login,
         logged_in,
         retry_login_user,

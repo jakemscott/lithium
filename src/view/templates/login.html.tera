@@ -29,4 +29,9 @@
         <button type="submit" class="btn btn-primary btn-block btn-large">Enter</button>
     </form>
 </section>
+<style>
+    a#login {
+        display: none;
+    }
+</style>
 {% endblock content %}

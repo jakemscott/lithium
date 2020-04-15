@@ -31,6 +31,11 @@ fn main() {
     rocket::ignite()
         .mount("/", routes![
             routes::index,
+            routes::admin,
+            routes::new_forward,
+            routes::edit_forward,
+            routes::delete_forward,
+            routes::visibility_forward,
             routes::forwarder
         ])
         .mount("/", login::login_routes())

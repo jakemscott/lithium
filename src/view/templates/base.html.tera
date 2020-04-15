@@ -3,22 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <title>{{ title }}</title>
-        <link rel="shortcut icon" type="image/png" href="/assets/img/icon.png"/>
+        <link rel="shortcut icon" type="image/png" href="/assets/img/icon.ico"/>
         <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/assets/css/fontawesome.min.css">
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/DataTables/datatables.min.css"/>
         <link rel="stylesheet" href="/assets/css/main.css">
     </head>
     <body>
-        {% include "header" %}
-        <div class="mdc-top-app-bar--fixed-adjust">
-            {% block content %}
-            {% endblock content %}
-            {% include "footer" %}
-        </div>
+        {% block content %}
+        {% endblock content %}
+        {% include "footer" %}
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/DataTables/datatables.min.js"></script>
+    <script src="/assets/js/utilities.model.js"></script>
+    <script src="/assets/js/main.js"></script>
 </html>

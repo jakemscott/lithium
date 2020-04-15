@@ -1,3 +1,5 @@
+#[path = "../controller/authentication/hashing.rs"] mod hashing;
+
 use rocket::{Request, Outcome};
 use rocket::request::FromRequest;
 
@@ -6,7 +8,8 @@ use std::string::ToString;
 
 use diesel::{ self, prelude::* };
 
-use crate::login::auth::*;
+use super::auth::*;
+use hashing::*;
 use crate::DbConnection;
 use crate::database::Users;
 
@@ -93,7 +96,6 @@ impl AuthorizeForm for AdministratorForm {
 
     /// Authenticate the credentials inside the login form
     fn authenticate(&self, conn: DbConnection) -> Result<Self::CookieType, AuthFail> {
-        use crate::login::hashing::Password;
         use crate::schema::*;
 
         let user_keys: Vec<Users> = users::table

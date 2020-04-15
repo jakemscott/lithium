@@ -2,7 +2,8 @@
 pub struct Links {
     pub id: i32,
     pub name: String,
-    pub link: String
+    pub link: String,
+    pub visible: bool
 }
 
 #[derive(Serialize, Deserialize, Queryable)]
