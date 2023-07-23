@@ -11,7 +11,7 @@ chrono = { version = "0.4", features = ["serde"]}
 rocket = { verison= "0.4.3", features= ["tls"] }
 tera = "0.11"
 
-diesel = {version = "1.4.2", features = ["chrono"]}
+diesel = {version = "1.4.6", features = ["chrono"]}
 dotenv = "0.9.0"
 argon2rs = "0.2.5"
 rand = "0.7.3"
